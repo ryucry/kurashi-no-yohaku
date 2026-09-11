@@ -375,3 +375,27 @@ if shopping_result:
         "選択内容は永続保存されません。"
         "残しておきたい場合はダウンロードしてください。"
     )
+import base64
+import streamlit as st
+
+背景画像を設定する関数
+def set_background(png_file):
+    with open(png_file, "rb") as f:
+        bin_data = f.read()
+    b64_data = base64.b64encode(bin_data).decode()
+
+    page_bg_img = f'''
+    <style>
+    .stApp {{
+        background-image: url("data:image/png;base64,{b64_data}");
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+        background-attachment: fixed;
+    }}
+    </style>
+    '''
+    st.markdown(page_bg_img, unsafe_allow_html=True)
+
+実際に背景を設定する（'background.png' の部分はアップロードしたファイル名に合わせてください）
+set_background('background.png')
