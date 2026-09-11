@@ -378,7 +378,7 @@ if shopping_result:
 import base64
 import streamlit as st
 
-背景画像を設定する関数
+# 背景画像を設定する関数
 def set_background(png_file):
     with open(png_file, "rb") as f:
         bin_data = f.read()
