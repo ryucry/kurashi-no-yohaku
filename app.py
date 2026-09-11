@@ -375,10 +375,7 @@ if shopping_result:
         "選択内容は永続保存されません。"
         "残しておきたい場合はダウンロードしてください。"
     )
-import base64
-import streamlit as st
 
-# 背景画像を設定する関数
 import base64
 from pathlib import Path
 import streamlit as st
