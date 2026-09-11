@@ -382,7 +382,7 @@ from pathlib import Path
 
 #背景画像と、コンテンツ全体を囲む半透明の枠を設定
 def set_background(image_file):
-    image_path = Path(__file__).resolve().parent / image_file
+    image_path = Path(file).resolve().parent / image_file
 
     with open(image_path, "rb") as f:
         encoded = base64.b64encode(f.read()).decode()
@@ -412,22 +412,16 @@ def set_background(image_file):
         .stApp .block-container p,
         .stApp .block-container li,
         .stApp .block-container label {{
-            color: #ffffff;
-        }}
-        </style>
-        """,
-        unsafe_allow_html=True,
-    )
-
-set_background("IMG_3585.png")
-import base64
+            color: #ffffff;import base64
 from pathlib import Path
+import streamlit as st
+
 
 def set_background(image_file):
     image_path = Path(file).resolve().parent / image_file
 
     with open(image_path, "rb") as f:
-        encoded = base64.b64encode(f.read()).decode()
+        encoded = base64.b64encode(f.read()).decode("utf-8")
 
     st.markdown(
         f"""
@@ -458,5 +452,6 @@ def set_background(image_file):
         """,
         unsafe_allow_html=True,
     )
+
 
 set_background("IMG_3585.png")
