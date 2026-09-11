@@ -377,8 +377,8 @@ if shopping_result:
     )
 
 import base64
-from pathlib import Path
 import streamlit as st
+from pathlib import Path
 
 #背景画像と、コンテンツ全体を囲む半透明の枠を設定
 def set_background(image_file):
