@@ -377,42 +377,6 @@ if shopping_result:
     )
 
 import base64
-import streamlit as st
-from pathlib import Path
-
-#背景画像と、コンテンツ全体を囲む半透明の枠を設定
-def set_background(image_file):
-    image_path = Path(file).resolve().parent / image_file
-
-    with open(image_path, "rb") as f:
-        encoded = base64.b64encode(f.read()).decode()
-
-    st.markdown(
-        f"""
-        <style>
-        /* アプリの背景画像 /
-        .stApp {{
-            background-image: url("data:image/png;base64,{encoded}");
-            background-size: cover;
-            background-position: center;
-            background-attachment: fixed;
-        }}
-
-        / コンテンツ全体をひとつの半透明の枠で囲む /
-        .stApp .block-container {{
-            background-color: rgba(0, 0, 0, 0.65);
-            border-radius: 20px;
-            padding: 2rem 1.5rem;
-        }}
-
-        / タイトルや本文の文字色 */
-        .stApp .block-container h1,
-        .stApp .block-container h2,
-        .stApp .block-container h3,
-        .stApp .block-container p,
-        .stApp .block-container li,
-        .stApp .block-container label {{
-            color: #ffffff;import base64
 from pathlib import Path
 import streamlit as st
 
@@ -420,8 +384,13 @@ import streamlit as st
 def set_background(image_file):
     image_path = Path(file).resolve().parent / image_file
 
-    with open(image_path, "rb") as f:
-        encoded = base64.b64encode(f.read()).decode("utf-8")
+    if not image_path.is_file():
+        st.error(f"背景画像が見つかりません: {image_path.name}")
+        return
+
+    encoded = base64.b64encode(
+        image_path.read_bytes()
+    ).decode("utf-8")
 
     st.markdown(
         f"""
