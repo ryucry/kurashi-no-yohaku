@@ -386,6 +386,10 @@ def set_background(png_file):
 
     page_bg_img = f'''
     <style>
+    /* 全体の文字に影をつけて読みやすくする */
+.stApp {
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.8);
+}
     .stApp {{
         background-image: url("data:image/png;base64,{b64_data}");
         background-size: cover;
