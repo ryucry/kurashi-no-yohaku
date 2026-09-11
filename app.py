@@ -407,6 +407,7 @@ def set_background(image_file):
             background-color: rgba(0, 0, 0, 0.65);
             border-radius: 20px;
             padding: 2rem 1.5rem;
+            margin-top: 5rem;
         }}
 
         .stApp .block-container h1,
