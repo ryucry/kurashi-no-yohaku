@@ -382,7 +382,7 @@ import streamlit as st
 
 
 def set_background(image_file):
-    image_path = Path(file).resolve().parent / image_file
+    image_path = Path(__file__).resolve().parent / image_file
 
     if not image_path.is_file():
         st.error(f"背景画像が見つかりません: {image_path.name}")
