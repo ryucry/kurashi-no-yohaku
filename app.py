@@ -1,12 +1,12 @@
 import streamlit as st
 
 st.set_page_config(
-    page_title="暮らしの余白",
+    page_title="一人暮らし必需品",
     page_icon="🌿",
     layout="centered",
 )
 
-st.title("🌿 暮らしの余白")
+st.title("一人暮らし必需品")
 st.write("新しい暮らしに揃えたいものを、選んでまとめよう。")
 st.caption("すでに持っているものは選ばなくてOK。必要なものだけチェックしてください。")
 
