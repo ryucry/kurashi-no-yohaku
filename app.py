@@ -397,5 +397,5 @@ def set_background(png_file):
     '''
     st.markdown(page_bg_img, unsafe_allow_html=True)
 
-実際に背景を設定する（'IMG_3585.png' の部分はアップロードしたファイル名に合わせてください）
+#実際に背景を設定する（'IMG_3585.png' の部分はアップロードしたファイル名に合わせてください）
 set_background('IMG_3585.png')
