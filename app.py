@@ -386,10 +386,17 @@ def set_background(png_file):
 
     page_bg_img = f'''
     <style>
+    div[data-testid="stMarkdownContainer"] {{
+    background-color: rgba(0, 0, 0, 0.65);
+    color: #ffffff;
+    padding: 12px 16px;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 10px;
+}}
     /* 全体の文字に影をつけて読みやすくする */
-.stApp {
+.stApp {{
     text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.8);
-}
+}}
     .stApp {{
         background-image: url("data:image/png;base64,{b64_data}");
         background-size: cover;
