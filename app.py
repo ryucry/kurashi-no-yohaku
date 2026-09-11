@@ -380,7 +380,7 @@ import base64
 from pathlib import Path
 import streamlit as st
 
-背景画像と、コンテンツ全体を囲む半透明の枠を設定
+#背景画像と、コンテンツ全体を囲む半透明の枠を設定
 def set_background(image_file):
     image_path = Path(file).resolve().parent / image_file
 
