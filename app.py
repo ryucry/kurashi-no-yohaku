@@ -379,34 +379,47 @@ import base64
 import streamlit as st
 
 # 背景画像を設定する関数
-def set_background(png_file):
-    with open(png_file, "rb") as f:
-        bin_data = f.read()
-    b64_data = base64.b64encode(bin_data).decode()
+import base64
+from pathlib import Path
+import streamlit as st
 
-    page_bg_img = f'''
-    <style>
-    div[data-testid="stMarkdownContainer"] {{
-    background-color: rgba(0, 0, 0, 0.65);
-    color: #ffffff;
-    padding: 12px 16px;
-    border: 1px solid rgba(255, 255, 255, 0.2);
-    border-radius: 10px;
-}}
-    /* 全体の文字に影をつけて読みやすくする */
-.stApp {{
-    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.8);
-}}
-    .stApp {{
-        background-image: url("data:image/png;base64,{b64_data}");
-        background-size: cover;
-        background-position: center;
-        background-repeat: no-repeat;
-        background-attachment: fixed;
-    }}
-    </style>
-    '''
-    st.markdown(page_bg_img, unsafe_allow_html=True)
+背景画像と、コンテンツ全体を囲む半透明の枠を設定
+def set_background(image_file):
+    image_path = Path(file).resolve().parent / image_file
 
-#実際に背景を設定する（'IMG_3585.png' の部分はアップロードしたファイル名に合わせてください）
-set_background('IMG_3585.png')
+    with open(image_path, "rb") as f:
+        encoded = base64.b64encode(f.read()).decode()
+
+    st.markdown(
+        f"""
+        <style>
+        /* アプリの背景画像 /
+        .stApp {{
+            background-image: url("data:image/png;base64,{encoded}");
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+        }}
+
+        / コンテンツ全体をひとつの半透明の枠で囲む /
+        .stApp .block-container {{
+            background-color: rgba(0, 0, 0, 0.65);
+            border-radius: 20px;
+            padding: 2rem 1.5rem;
+        }}
+
+        / タイトルや本文の文字色 */
+        .stApp .block-container h1,
+        .stApp .block-container h2,
+        .stApp .block-container h3,
+        .stApp .block-container p,
+        .stApp .block-container li,
+        .stApp .block-container label {{
+            color: #ffffff;
+        }}
+        </style>
+        """,
+        unsafe_allow_html=True,
+    )
+
+set_background("IMG_3585.png")
