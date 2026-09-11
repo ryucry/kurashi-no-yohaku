@@ -382,7 +382,7 @@ from pathlib import Path
 
 #背景画像と、コンテンツ全体を囲む半透明の枠を設定
 def set_background(image_file):
-    image_path = Path(file).resolve().parent / image_file
+    image_path = Path(__file__).resolve().parent / image_file
 
     with open(image_path, "rb") as f:
         encoded = base64.b64encode(f.read()).decode()
