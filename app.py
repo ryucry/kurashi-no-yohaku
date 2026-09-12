@@ -1,8 +1,3 @@
-
-ぺぺ
-15:39 (1 分前)
-To 自分
-
 import streamlit as st
 
 # ページ設定
