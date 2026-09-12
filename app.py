@@ -3,7 +3,7 @@ import streamlit as st
 st.markdown("""
 <style>
 .stApp {
-    background-image: url("画像URL");
+    background-image: url("https://ryucry-kurashi-portal-app--moeurt.streamlit.app/");
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
