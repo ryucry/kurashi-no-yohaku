@@ -1,5 +1,6 @@
 import streamlit as st
-# デザイン設定
+
+#デザイン設定
 st.markdown("""
 <style>
 .stApp {
@@ -10,7 +11,8 @@ st.markdown("""
         linear-gradient(90deg, rgba(100, 120, 125, 0.12) 1px, transparent 1px);
     background-size: 52px 52px;
 }
-
+</style>
+""", unsafe_allow_html=True)
 import streamlit as st
 
 st.set_page_config(
