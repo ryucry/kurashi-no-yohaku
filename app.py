@@ -1,132 +1,112 @@
 import streamlit as st
 
+# デザイン設定
+st.markdown("""
+<style>
+.stApp {
+    background-color: #171b1d;
+    color: #f5f5f5;
+    background-image:
+        linear-gradient(rgba(100, 120, 125, 0.12) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(100, 120, 125, 0.12) 1px, transparent 1px);
+    background-size: 52px 52px;
+}
 
-# ページ設定
-st.set_page_config(
-    page_title="暮らしの余白",
-    page_icon="🌿",
-    layout="centered",
-    initial_sidebar_state="collapsed",
-)
+/* 上部ヘッダー */
+.header {
+    padding: 25px 5% 10px 5%;
+    border-bottom: 1px solid #394044;
+}
 
-# CSS設定
-st.markdown(
-    """
-    <style>
-    /* ページ全体 */
-    .stApp {
-        background-color: #f7f5f0;
-    }
+.logo {
+    font-size: 30px;
+    letter-spacing: 8px;
+    color: #ffffff;
+}
 
-    /* Streamlit標準の余白を調整 */
-    .block-container {
-        max-width: 900px;
-        padding-top: 2rem;
-        padding-bottom: 3rem;
-    }
+.subtitle {
+    color: #8d999d;
+    font-size: 16px;
+    letter-spacing: 3px;
+}
 
-    /* ヘッダー */
-    .custom-header {
-        width: 100%;
-        max-width: 800px;
-        margin: 0 auto 2rem auto;
-        padding: 2rem 1.5rem;
-        box-sizing: border-box;
-        text-align: center;
-        background-color: #ffffff;
-        border-radius: 18px;
-        box-shadow: 0 4px 16px rgba(0, 0, 0, 0.08);
-    }
+/* ナビゲーション */
+.nav-box {
+    margin-top: 25px;
+    padding: 12px 0;
+    color: #9ca8ac;
+    font-size: 16px;
+}
 
-    .custom-header h1 {
-        margin: 0;
-        color: #5f6658;
-        font-size: 2rem;
-        font-weight: 700;
-        letter-spacing: 0.08em;
-    }
+/* メイン文章 */
+.main-content {
+    max-width: 950px;
+    margin: 70px auto;
+    padding: 0 30px;
+}
 
-    .custom-header p {
-        margin: 0.8rem 0 0 0;
-        color: #888f80;
-        font-size: 0.95rem;
-    }
+.lead-label {
+    color: #479dcc;
+    font-size: 16px;
+    letter-spacing: 4px;
+    margin-bottom: 25px;
+}
 
-    /* 見出し */
-    h1, h2, h3 {
-        color: #5f6658;
-    }
+.catch-copy {
+    color: #ffffff;
+    font-size: clamp(36px, 6vw, 76px);
+    font-weight: bold;
+    line-height: 1.35;
+    letter-spacing: 5px;
+    margin-bottom: 45px;
+}
 
-    /* ボタン */
-    .stButton > button {
-        width: 100%;
-        border: none;
-        border-radius: 12px;
-        padding: 0.7rem 1rem;
-        color: white;
-        background-color: #8b967f;
-        font-weight: 600;
-    }
+.description {
+    color: #a9b1b4;
+    font-size: 20px;
+    line-height: 2.2;
+    letter-spacing: 2px;
+}
 
-    .stButton > button:hover {
-        background-color: #707d66;
-        color: white;
-    }
+/* カード */
+.result-card {
+    margin-top: 70px;
+    padding: 35px;
+    border: 1px solid #3c474b;
+    border-radius: 12px;
+    background: rgba(15, 18, 19, 0.65);
+}
 
-    /* 入力欄 */
-    .stTextInput input,
-    .stTextArea textarea,
-    .stSelectbox div {
-        border-radius: 10px;
-    }
+.result-label {
+    color: #65acd2;
+    font-size: 18px;
+    letter-spacing: 3px;
+}
 
-    /* フッター */
-    .custom-footer {
-        margin-top: 3rem;
-        padding: 1rem;
-        text-align: center;
-        color: #999f94;
-        font-size: 0.8rem;
-    }
-    </style>
-    """,
-    unsafe_allow_html=True,
-)
+.result-title {
+    color: white;
+    font-size: 30px;
+    font-weight: bold;
+    margin: 25px 0;
+}
+
+.result-text {
+    color: #a9b1b4;
+    font-size: 17px;
+    line-height: 2;
+}
+</style>
+""", unsafe_allow_html=True)
+
 
 # ヘッダー
-st.markdown(
-    """
-    <div class="custom-header">
-        <h1>暮らしの余白</h1>
-        <p>毎日の暮らしに、少しのゆとりを。</p>
-    </div>
-    """,
-    unsafe_allow_html=True,
-)
+st.markdown("""
+<div class="header">
+    <div class="logo">新生活 暮らしアップデート</div>
+    <div class="subtitle">がんばりすぎない、ちょうどいい暮らし</div>
+</div>
+""", unsafe_allow_html=True)
 
-# ここからアプリの内容
-st.subheader("今日の暮らし")
-
-st.write("ここにアプリの内容を追加してください。")
-
-# 例：入力欄
-user_input = st.text_input("メッセージを入力してください")
-
-if st.button("送信"):
-    if user_input:
-        st.success(f"「{user_input}」を受け付けました。")
-    else:
-        st.warning("メッセージを入力してください。")
-
-# フッター
-st.markdown(
-    """
-    <div class="custom-footer">
-        暮らしの余白
-    </div>
-    """,
-    unsafe_allow_html=True,
-)
 
 # 選択メニューを上部に配置
 menu = st.selectbox(
@@ -172,6 +152,13 @@ if menu == "一人暮らし必需品":
         """,
         unsafe_allow_html=True
     )
+
+# メニューの下に表示
+st.markdown(f"""
+<div class="nav-box">
+    選択中：{menu}
+</div>
+""", unsafe_allow_html=True)
 
 import streamlit as st
 
