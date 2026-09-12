@@ -1,16 +1,16 @@
 import streamlit as st
-
+# デザイン設定
 st.markdown("""
 <style>
 .stApp {
-    background-image: url("https://ryucry-kurashi-portal-app--moeurt.streamlit.app/");
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-    background-attachment: fixed;
+    background-color: #171b1d;
+    color: #f5f5f5;
+    background-image:
+        linear-gradient(rgba(100, 120, 125, 0.12) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(100, 120, 125, 0.12) 1px, transparent 1px);
+    background-size: 52px 52px;
 }
-</style>
-""", unsafe_allow_html=True)
+
 import streamlit as st
 
 st.set_page_config(
