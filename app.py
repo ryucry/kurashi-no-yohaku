@@ -1,6 +1,6 @@
 import streamlit as st
 
-背景色や画像をCSSで設定
+#背景色や画像をCSSで設定
 def set_background(color=None, image_url=None):
     if color:
         css = f"""
@@ -25,9 +25,9 @@ def set_background(color=None, image_url=None):
 
     st.markdown(css, unsafe_allow_html=True)
 
-背景色を適用する場合の例
+#背景色を適用する場合の例
 set_background(color="#f0f2f6")
-背景画像を使う場合の例
+#背景画像を使う場合の例
 set_background(image_url="画像のURL")
 import streamlit as st
 
