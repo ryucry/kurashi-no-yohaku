@@ -1,46 +1,5 @@
 import streamlit as st
 
-st.set_page_config(
-    page_title="新生活 暮らしアップデート",
-    layout="wide"
-)
-
-st.markdown("""
-<style>
-.stApp {
-    background-color: #171b1d;
-    color: white;
-}
-
-.header {
-    padding: 25px;
-    text-align: center;
-    border-bottom: 2px solid #333;
-    margin-bottom: 20px;
-}
-
-.logo {
-    font-size: 30px;
-    font-weight: bold;
-    color: #ffffff;
-}
-
-.subtitle {
-    font-size: 18px;
-    color: #cccccc;
-    margin-top: 10px;
-}
-</style>
-""", unsafe_allow_html=True)
-
-st.markdown("""
-<div class="header">
-    <div class="logo">新生活　暮らしアップデート</div>
-    <div class="subtitle">がんばりすぎない、ちょうどいい暮らし</div>
-</div>
-""", unsafe_allow_html=True)
-
-st.write("ここにアプリの内容が入ります。")
 # ヘッダー
 st.markdown("""
 <div class="header">
