@@ -12,7 +12,91 @@ st.markdown("""
     background-size: 52px 52px;
 }
 </style>
+/* 上部ヘッダー */
+.header {
+    padding: 25px 5% 10px 5%;
+    border-bottom: 1px solid #394044;
+}
 
+.logo {
+    font-size: 30px;
+    letter-spacing: 8px;
+    color: #ffffff;
+}
+
+.subtitle {
+    color: #8d999d;
+    font-size: 16px;
+    letter-spacing: 3px;
+}
+
+/* ナビゲーション */
+.nav-box {
+    margin-top: 25px;
+    padding: 12px 0;
+    color: #9ca8ac;
+    font-size: 16px;
+}
+""", unsafe_allow_html=True)
+# ヘッダー
+st.markdown("""
+<div class="header">
+    <div class="logo">新生活 暮らしアップデート</div>
+    <div class="subtitle">がんばりすぎない、ちょうどいい暮らし</div>
+</div>
+""", unsafe_allow_html=True)
+
+
+# 選択メニューを上部に配置
+menu = st.selectbox(
+    "カテゴリーを選択",
+    [
+        "一人暮らし必需品",
+        "Wi-Fiとsim",
+        "食",
+        "生活必需品",
+        "ふるさと納税"
+    ],
+    label_visibility="collapsed"
+)
+#各カテゴリーに移動先URLを設定
+category_urls = {
+    "一人暮らし必需品": "https://ryucry-kurashi-no-yohaku-app-jbr9xr.streamlit.app/",
+    "Wi-Fiとsim": "https://example.com/wifi",
+    "食": "https://example.com/food",
+    "生活必需品": "https://example.com/daily",
+    "ふるさと納税": "https://example.com/furusato",
+}
+
+#選択されたカテゴリーのURLを取得
+selected_url = category_urls.get(menu)
+
+#一人暮らし必需品を選択した場合
+if menu == "一人暮らし必需品":
+    st.markdown(
+        f"""
+        <a href="{selected_url}" target="_blank">
+            <button style="
+                padding: 10px 20px;
+                font-size: 16px;
+                cursor: pointer;
+                border-radius: 8px;
+                border: none;
+                background-color: #4CAF50;
+                color: white;
+            ">
+                一人暮らし必需品サイトを見る
+            </button>
+        </a>
+        """,
+        unsafe_allow_html=True
+    )
+
+# メニューの下に表示
+st.markdown(f"""
+<div class="nav-box">
+    選択中：{menu}
+</div>
 """, unsafe_allow_html=True)
 st.set_page_config(
     page_title="一人暮らし必需品",
