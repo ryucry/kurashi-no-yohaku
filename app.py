@@ -1,34 +1,100 @@
-import streamlit as st
+# デザイン設定
+st.markdown("""
+<style>
+.stApp {
+    background-color: #171b1d;
+    color: #f5f5f5;
+    background-image:
+        linear-gradient(rgba(100, 120, 125, 0.12) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(100, 120, 125, 0.12) 1px, transparent 1px);
+    background-size: 52px 52px;
+}
 
-#背景色や画像をCSSで設定
-def set_background(color=None, image_url=None):
-    if color:
-        css = f"""
-        <style>
-        .stApp {{
-            background-color: {color};
-        }}
-        </style>
-        """
-    elif image_url:
-        css = f"""
-        <style>
-        .stApp {{
-            background-image: url('{image_url}');
-            background-size: cover;
-            background-position: center;
-        }}
-        </style>
-        """
-    else:
-        return
+/* 上部ヘッダー */
+.header {
+    padding: 25px 5% 10px 5%;
+    border-bottom: 1px solid #394044;
+}
 
-    st.markdown(css, unsafe_allow_html=True)
+.logo {
+    font-size: 30px;
+    letter-spacing: 8px;
+    color: #ffffff;
+}
 
-#背景色を適用する場合の例
-set_background(color="#f0f2f6")
-#背景画像を使う場合の例
-set_background(image_url="画像のURL")
+.subtitle {
+    color: #8d999d;
+    font-size: 16px;
+    letter-spacing: 3px;
+}
+
+/* ナビゲーション */
+.nav-box {
+    margin-top: 25px;
+    padding: 12px 0;
+    color: #9ca8ac;
+    font-size: 16px;
+}
+
+/* メイン文章 */
+.main-content {
+    max-width: 950px;
+    margin: 70px auto;
+    padding: 0 30px;
+}
+
+.lead-label {
+    color: #479dcc;
+    font-size: 16px;
+    letter-spacing: 4px;
+    margin-bottom: 25px;
+}
+
+.catch-copy {
+    color: #ffffff;
+    font-size: clamp(36px, 6vw, 76px);
+    font-weight: bold;
+    line-height: 1.35;
+    letter-spacing: 5px;
+    margin-bottom: 45px;
+}
+
+.description {
+    color: #a9b1b4;
+    font-size: 20px;
+    line-height: 2.2;
+    letter-spacing: 2px;
+}
+
+/* カード */
+.result-card {
+    margin-top: 70px;
+    padding: 35px;
+    border: 1px solid #3c474b;
+    border-radius: 12px;
+    background: rgba(15, 18, 19, 0.65);
+}
+
+.result-label {
+    color: #65acd2;
+    font-size: 18px;
+    letter-spacing: 3px;
+}
+
+.result-title {
+    color: white;
+    font-size: 30px;
+    font-weight: bold;
+    margin: 25px 0;
+}
+
+.result-text {
+    color: #a9b1b4;
+    font-size: 17px;
+    line-height: 2;
+}
+</style>
+""", unsafe_allow_html=True)
 import streamlit as st
 
 st.set_page_config(
