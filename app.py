@@ -12,7 +12,7 @@ st.markdown("""
     background-size: 52px 52px;
 }
 </style>
-
+""", unsafe_allow_html=True)
 
 st.set_page_config(
     page_title="一人暮らし必需品",
