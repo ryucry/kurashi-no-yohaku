@@ -1,34 +1,16 @@
-# デザイン設定
+import streamlit as st
+
 st.markdown("""
 <style>
 .stApp {
-    background-color: #171b1d;
-    color: #f5f5f5;
-    background-image:
-        linear-gradient(rgba(100, 120, 125, 0.12) 1px, transparent 1px),
-        linear-gradient(90deg, rgba(100, 120, 125, 0.12) 1px, transparent 1px);
-    background-size: 52px 52px;
+    background-image: url("画像URL");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
 }
-
-/* 上部ヘッダー */
-.header {
-    padding: 25px 5% 10px 5%;
-    border-bottom: 1px solid #394044;
-}
-
-.logo {
-    font-size: 30px;
-    letter-spacing: 8px;
-    color: #ffffff;
-}
-
-.subtitle {
-    color: #8d999d;
-    font-size: 16px;
-    letter-spacing: 3px;
-}
-
-
+</style>
+""", unsafe_allow_html=True)
 import streamlit as st
 
 st.set_page_config(
