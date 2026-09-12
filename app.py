@@ -12,32 +12,7 @@ st.markdown("""
     background-size: 52px 52px;
 }
 </style>
-/* 上部ヘッダー */
-.header {
-    padding: 25px 5% 10px 5%;
-    border-bottom: 1px solid #394044;
-}
 
-.logo {
-    font-size: 30px;
-    letter-spacing: 8px;
-    color: #ffffff;
-}
-
-.subtitle {
-    color: #8d999d;
-    font-size: 16px;
-    letter-spacing: 3px;
-}
-
-/* ナビゲーション */
-.nav-box {
-    margin-top: 25px;
-    padding: 12px 0;
-    color: #9ca8ac;
-    font-size: 16px;
-}
-""", unsafe_allow_html=True)
 # ヘッダー
 st.markdown("""
 <div class="header">
