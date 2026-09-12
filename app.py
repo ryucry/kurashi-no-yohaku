@@ -1,7 +1,7 @@
 import streamlit as st
 
 st.set_page_config(
-    page_title="ひとり暮らし必需品",
+    page_title="新生活 暮らしアップデート",
     layout="wide"
 )
 
@@ -35,7 +35,7 @@ st.markdown("""
 
 st.markdown("""
 <div class="header">
-    <div class="logo">ひとり暮らし必需品</div>
+    <div class="logo">新生活　暮らしアップデート</div>
     <div class="subtitle">がんばりすぎない、ちょうどいい暮らし</div>
 </div>
 """, unsafe_allow_html=True)
